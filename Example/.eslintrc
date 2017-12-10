@@ -1,0 +1,40 @@
+{
+  "extends": "airbnb",
+  "plugins": [
+    "import",
+    "react",
+    "react-native"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "arrow-body-style": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": [1, { "forbid": ["any", "array"]}],
+    "no-use-before-define": 0,
+    "react/jsx-no-bind": [1, {
+      "ignoreRefs": false,
+      "allowArrowFunctions": true,
+      "allowFunctions": true,
+      "allowBind": true
+    }] 
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "actions": "actions",
+          "components": "components",
+          "config": "config",
+          "containers": "containers",
+          "helpers": "helpers",
+          "reducers": "reducers",
+          "sagas": "sagas",
+          "services": "services"
+        }
+      }
+    }
+  }
+}

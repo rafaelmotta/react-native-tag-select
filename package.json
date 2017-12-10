@@ -1,0 +1,23 @@
+{
+  "name": "react-native-tag-select",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelmotta/react-native-tag-select.git"
+  },
+  "keywords": [
+    "react",
+    "native"
+  ],
+  "author": "Rafael Michels Motta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelmotta/react-native-tag-select/issues"
+  },
+  "homepage": "https://github.com/rafaelmotta/react-native-tag-select#readme"
+}
