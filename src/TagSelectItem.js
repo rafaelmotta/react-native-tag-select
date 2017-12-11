@@ -3,26 +3,23 @@ import PropTypes from 'prop-types';
 import {
   View,
   Text,
-  Platform,
   StyleSheet,
-  TouchableHighlight,
   TouchableOpacity,
 } from 'react-native';
 
 const TagSelectItem = (props) => {
-  const Touch = Platform.OS === 'ios' ? TouchableOpacity : TouchableHighlight;
   const innerStyle = [props.innerStyle, props.selected && props.innerStyleSelected];
   const labelStyle = [props.labelText, props.selected && props.labelTextSelected];
 
   return (
     <View style={styles.container}>
-      <Touch onPress={props.onPress} activeOpacity={props.activeOpacity}>
+      <TouchableOpacity onPress={props.onPress} activeOpacity={props.activeOpacity}>
         <View style={innerStyle}>
           <Text style={labelStyle} numberOfLines={1}>
             {props.label}
           </Text>
         </View>
-      </Touch>
+      </TouchableOpacity>
     </View>
   );
 };

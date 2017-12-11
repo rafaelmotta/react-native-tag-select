@@ -14,7 +14,7 @@ export default class App extends React.Component {
     const data = [
       { id: 1, label: 'Money' },
       { id: 2, label: 'Credit card' },
-      { id: 3, label: 'Débito card' },
+      { id: 3, label: 'Debit card' },
       { id: 4, label: 'Online payment' },
       { id: 5, label: 'Bitcoin' },
     ];
@@ -33,18 +33,23 @@ export default class App extends React.Component {
           }}
         />
         <View style={styles.buttonContainer}>
-          <Button
-            title="Get selected count"
-            onPress={() => {
-              Alert.alert('Selected count', `Total: ${this.tag.totalSelected}`);
-            }}
-          />
-          <Button
-            title="Get selected"
-            onPress={() => {
-              Alert.alert('Selected items:', JSON.stringify(this.tag.itemsSelected));
-            }}
-          />
+          <View style={styles.buttonInner}>
+            <Button
+              title="Get selected count"
+              style={styles.button}
+              onPress={() => {
+                Alert.alert('Selected count', `Total: ${this.tag.totalSelected}`);
+              }}
+            />
+          </View>
+          <View>
+            <Button
+              title="Get selected"
+              onPress={() => {
+                Alert.alert('Selected items:', JSON.stringify(this.tag.itemsSelected));
+              }}
+            />
+          </View>
         </View>
       </View>
     );
@@ -59,7 +64,10 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   buttonContainer: {
-    marginBottom: 50,
+    padding: 15,
+  },
+  buttonInner: {
+    marginBottom: 15,
   },
   labelText: {
     color: '#333',
