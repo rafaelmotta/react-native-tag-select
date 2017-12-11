@@ -13,7 +13,7 @@ A simple tag component to act as radio button / checkbox
 ## Demo
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/rafaelmotta/react-native-tag-select/master/example.gif" height="300" />
+<img src="https://raw.githubusercontent.com/rafaelmotta/react-native-tag-select/master/example.gif" height="550" />
 </p>
 
 ## Setup
