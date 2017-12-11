@@ -54,7 +54,7 @@ class TagSelect extends React.Component {
           {this.props.data.map((i) => {
             return(
               <TagSelectItem
-                {...this.props}
+                itemInnerStyle={this.props.itemInnerStyle}
                 label={i[this.props.labelAttr]}
                 key={i[this.props.keyAttr]}
                 onPress={this.handleSelectItem.bind(this, i)}
@@ -76,7 +76,7 @@ TagSelect.propTypes = {
   onMaxError: PropTypes.func,
   onItemPress: PropTypes.func,
   itemInnerStyle: PropTypes.any,
-  iteminnerStyleSelected: PropTypes.any,
+  itemInnerStyleSelected: PropTypes.any,
   itemLabelText: PropTypes.any,
   itemLabelTextSelected: PropTypes.any,
 };
@@ -89,7 +89,7 @@ TagSelect.defaultProps = {
   onMaxError: null,
   onItemPress: null,
   itemInnerStyle: null,
-  iteminnerStyleSelected: null,
+  itemInnerStyleSelected: null,
   itemLabelText: null,
   itemLabelTextSelected: null,
 };

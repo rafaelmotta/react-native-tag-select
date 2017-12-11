@@ -8,8 +8,15 @@ import {
 } from 'react-native';
 
 const TagSelectItem = (props) => {
-  const innerStyle = [props.itemInnerStyle, props.selected && props.iteminnerStyleSelected];
-  const labelStyle = [props.itemLabelText, props.selected && props.itemLabelTextSelected];
+  const innerStyle = [
+    styles.inner, props.itemInnerStyle,
+    props.selected && (styles.innerSelected, props.itemInnerStyleSelected)
+  ];
+
+  const labelStyle = [
+    styles.labelText, props.itemLabelText,
+    props.selected && (styles.innerSelected, props.itemLabelTextSelected)
+  ];
 
   return (
     <View style={styles.container}>
@@ -22,6 +29,28 @@ const TagSelectItem = (props) => {
       </TouchableOpacity>
     </View>
   );
+};
+
+TagSelectItem.propTypes = {
+  label: PropTypes.string,
+  onPress: PropTypes.func,
+  selected: PropTypes.bool,
+  activeOpacity: PropTypes.number,
+  itemInnerStyle: PropTypes.any,
+  itemInnerStyleSelected: PropTypes.any,
+  itemLabelText: PropTypes.any,
+  itemLabelTextSelected: PropTypes.any,
+};
+
+TagSelectItem.defaultProps = {
+  label: null,
+  onPress: null,
+  selected: false,
+  activeOpacity: 0.5,
+  itemInnerStyle: null,
+  itemInnerStyleSelected: null,
+  itemLabelText: null,
+  itemLabelTextSelected: null,
 };
 
 export const styles = StyleSheet.create({
@@ -44,27 +73,5 @@ export const styles = StyleSheet.create({
     color: '#FFF',
   },
 });
-
-TagSelectItem.propTypes = {
-  label: PropTypes.string,
-  onPress: PropTypes.func,
-  selected: PropTypes.bool,
-  activeOpacity: PropTypes.number,
-  itemInnerStyle: PropTypes.any,
-  iteminnerStyleSelected: PropTypes.any,
-  itemLabelText: PropTypes.any,
-  itemLabelTextSelected: PropTypes.any,
-};
-
-TagSelectItem.defaultProps = {
-  label: null,
-  onPress: null,
-  selected: false,
-  activeOpacity: 0.5,
-  itemInnerStyle: styles.inner,
-  iteminnerStyleSelected: styles.innerSelected,
-  itemLabelText: styles.labelText,
-  itemLabelTextSelected: styles.labelTextSelected,
-};
 
 export default TagSelectItem;
