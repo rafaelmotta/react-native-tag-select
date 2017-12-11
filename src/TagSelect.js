@@ -28,16 +28,16 @@ class TagSelect extends React.Component {
 
   handleSelectItem = (item) => {
     const selectedItems = Object.assign(this.state.selectedItems, {});
-    const found = this.state.selectedItems[item[this.props.keyName]];
+    const found = this.state.selectedItems[item[this.props.keyAttr]];
 
     if (found) {
-      delete selectedItems[item[this.props.keyName]];
+      delete selectedItems[item[this.props.keyAttr]];
     } else {
       if (this.props.max && this.totalSelected >= this.props.max) {
         return this.props.onMaxError();
       }
 
-      selectedItems[item[this.props.keyName]] = item;
+      selectedItems[item[this.props.keyAttr]] = item;
     }
 
     this.setState({ selectedItems });
@@ -51,14 +51,19 @@ class TagSelect extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.list}>
-          {this.props.data.map(i => (
-            <TagSelectItem
-              {...i}
-              key={i[this.props.keyName]}
-              onPress={this.handleSelectItem.bind(this, i)}
-              selected={this.state.selectedItems[i[this.props.keyName]] && true}
-            />
-          ))}
+          {this.props.data.map((i) => {
+            console.log(this.props.keyAttr);
+            console.log(i[this.props.keyAttr]);
+
+            return(
+              <TagSelectItem
+                label={i[this.props.labelAttr]}
+                key={i[this.props.keyAttr]}
+                onPress={this.handleSelectItem.bind(this, i)}
+                selected={this.state.selectedItems[i[this.props.keyAttr]] && true}
+              />
+              )
+          })}
         </View>
       </View>
     );
@@ -66,7 +71,8 @@ class TagSelect extends React.Component {
 }
 
 TagSelect.propTypes = {
-  keyName: PropTypes.string,
+  labelAttr: PropTypes.string,
+  keyAttr: PropTypes.string,
   data: PropTypes.array,
   max: PropTypes.number,
   onMaxError: PropTypes.func,
@@ -74,7 +80,8 @@ TagSelect.propTypes = {
 };
 
 TagSelect.defaultProps = {
-  keyName: 'id',
+  labelAttr: 'label',
+  keyAttr: 'id',
   data: null,
   max: null,
   onMaxError: null,
