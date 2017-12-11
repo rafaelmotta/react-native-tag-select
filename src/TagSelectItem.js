@@ -8,8 +8,8 @@ import {
 } from 'react-native';
 
 const TagSelectItem = (props) => {
-  const innerStyle = [props.innerStyle, props.selected && props.innerStyleSelected];
-  const labelStyle = [props.labelText, props.selected && props.labelTextSelected];
+  const innerStyle = [props.itemInnerStyle, props.selected && props.iteminnerStyleSelected];
+  const labelStyle = [props.itemLabelText, props.selected && props.itemLabelTextSelected];
 
   return (
     <View style={styles.container}>
@@ -50,10 +50,10 @@ TagSelectItem.propTypes = {
   onPress: PropTypes.func,
   selected: PropTypes.bool,
   activeOpacity: PropTypes.number,
-  innerStyle: PropTypes.any,
-  innerStyleSelected: PropTypes.any,
-  labelText: PropTypes.any,
-  labelTextSelected: PropTypes.any,
+  itemInnerStyle: PropTypes.any,
+  iteminnerStyleSelected: PropTypes.any,
+  itemLabelText: PropTypes.any,
+  itemLabelTextSelected: PropTypes.any,
 };
 
 TagSelectItem.defaultProps = {
@@ -61,10 +61,10 @@ TagSelectItem.defaultProps = {
   onPress: null,
   selected: false,
   activeOpacity: 0.5,
-  innerStyle: styles.inner,
-  innerStyleSelected: styles.innerSelected,
-  labelText: styles.labelText,
-  labelTextSelected: styles.labelTextSelected,
+  itemInnerStyle: styles.inner,
+  iteminnerStyleSelected: styles.innerSelected,
+  itemLabelText: styles.labelText,
+  itemLabelTextSelected: styles.labelTextSelected,
 };
 
 export default TagSelectItem;
