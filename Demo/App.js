@@ -7,7 +7,7 @@ import {
   Text,
 } from 'react-native';
 
-import TagSelect from 'react-native-tag-select';
+import { TagSelect } from 'react-native-tag-select';
 
 export default class App extends React.Component {
   render() {

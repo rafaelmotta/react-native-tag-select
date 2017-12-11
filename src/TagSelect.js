@@ -52,9 +52,6 @@ class TagSelect extends React.Component {
       <View style={styles.container}>
         <View style={styles.list}>
           {this.props.data.map((i) => {
-            console.log(this.props.keyAttr);
-            console.log(i[this.props.keyAttr]);
-
             return(
               <TagSelectItem
                 label={i[this.props.labelAttr]}
