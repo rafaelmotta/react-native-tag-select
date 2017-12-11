@@ -28,16 +28,16 @@ class TagSelect extends React.Component {
 
   handleSelectItem = (item) => {
     const selectedItems = Object.assign(this.state.selectedItems, {});
-    const found = this.state.selectedItems[item[this.props.key]];
+    const found = this.state.selectedItems[item[this.props.keyName]];
 
     if (found) {
-      delete selectedItems[item[this.props.key]];
+      delete selectedItems[item[this.props.keyName]];
     } else {
       if (this.props.max && this.totalSelected >= this.props.max) {
         return this.props.onMaxError();
       }
 
-      selectedItems[item[this.props.key]] = item;
+      selectedItems[item[this.props.keyName]] = item;
     }
 
     this.setState({ selectedItems });
@@ -54,9 +54,9 @@ class TagSelect extends React.Component {
           {this.props.data.map(i => (
             <TagSelectItem
               {...i}
-              key={i[this.props.key]}
+              key={i[this.props.keyName]}
               onPress={this.handleSelectItem.bind(this, i)}
-              selected={this.state.selectedItems[i[this.props.key]] && true}
+              selected={this.state.selectedItems[i[this.props.keyName]] && true}
             />
           ))}
         </View>
@@ -66,7 +66,7 @@ class TagSelect extends React.Component {
 }
 
 TagSelect.propTypes = {
-  key: PropTypes.string,
+  keyName: PropTypes.string,
   data: PropTypes.array,
   max: PropTypes.number,
   onMaxError: PropTypes.func,
@@ -74,7 +74,7 @@ TagSelect.propTypes = {
 };
 
 TagSelect.defaultProps = {
-  key: 'id',
+  keyName: 'id',
   data: null,
   max: null,
   onMaxError: null,

@@ -4565,9 +4565,9 @@ react-native-scripts@1.8.1:
     color "^2.0.1"
     lodash "^4.16.6"
 
-react-native-tag-select@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-tag-select/-/react-native-tag-select-1.0.0.tgz#371913e2b4e86a7989a2a7cd822bd47ef90934ce"
+react-native-tag-select@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-tag-select/-/react-native-tag-select-1.0.1.tgz#aebd10e49578900caf7961d1ac4e8ea3352ed008"
   dependencies:
     prop-types "^15.6.0"
 

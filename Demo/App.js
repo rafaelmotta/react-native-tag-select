@@ -9,16 +9,16 @@ import {
 
 import {
   TagSelect,
-} from 'react-native-tag-selec';
+} from 'react-native-tag-select';
 
 export default class App extends React.Component {
   render() {
     const data = [
-      { id: 1, label: 'Dinheiro' },
-      { id: 2, label: 'Cheque' },
-      { id: 3, label: 'Cartão de débito' },
-      { id: 4, label: 'Cartão de crédito' },
-      { id: 5, label: 'Pagamento online' },
+      { key: 1, label: 'Money' },
+      { key: 2, label: 'Credit card' },
+      { key: 3, label: 'Débito card' },
+      { key: 4, label: 'Online payment' },
+      { key: 5, label: 'Bitcoin' },
     ];
 
     return (
@@ -26,7 +26,8 @@ export default class App extends React.Component {
         <Text style={styles.labelText}>Payment:</Text>
         <TagSelect
           data={data}
-          max={2}
+          max={3}
+          keyName="key"
           ref={(tag) => {
             this.tag = tag;
           }}
