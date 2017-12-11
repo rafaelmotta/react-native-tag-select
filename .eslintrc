@@ -9,7 +9,7 @@
   "rules": {
     "arrow-body-style": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/forbid-prop-types": [1, { "forbid": ["any", "array"]}],
+    "react/forbid-prop-types": [1, { "forbid": []}],
     "no-use-before-define": 0,
     "react/jsx-no-bind": [1, {
       "ignoreRefs": false,
