@@ -54,7 +54,7 @@ class TagSelect extends React.Component {
           {this.props.data.map((i) => {
             return(
               <TagSelectItem
-                itemInnerStyle={this.props.itemInnerStyle}
+                {...this.props}
                 label={i[this.props.labelAttr]}
                 key={i[this.props.keyAttr]}
                 onPress={this.handleSelectItem.bind(this, i)}
@@ -88,10 +88,10 @@ TagSelect.defaultProps = {
   max: null,
   onMaxError: null,
   onItemPress: null,
-  itemInnerStyle: null,
-  itemInnerStyleSelected: null,
-  itemLabelText: null,
-  itemLabelTextSelected: null,
+  itemInnerStyle: {},
+  itemInnerStyleSelected: {},
+  itemLabelText: {},
+  itemLabelTextSelected: {},
 };
 
 const styles = StyleSheet.create({

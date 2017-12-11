@@ -9,13 +9,13 @@ import {
 
 const TagSelectItem = (props) => {
   const innerStyle = [
-    styles.inner, props.itemInnerStyle,
-    props.selected && (styles.innerSelected, props.itemInnerStyleSelected)
+    ([styles.inner].concat(props.itemInnerStyle)),
+    props.selected && ([styles.innerSelected].concat(props.itemInnerStyleSelected))
   ];
 
   const labelStyle = [
-    styles.labelText, props.itemLabelText,
-    props.selected && (styles.innerSelected, props.itemLabelTextSelected)
+    ([styles.labelText].concat(props.itemLabelText)),
+    props.selected && ([styles.labelTextSelected].concat(props.itemLabelTextSelected))
   ];
 
   return (
