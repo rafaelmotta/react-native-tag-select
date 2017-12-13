@@ -117,8 +117,8 @@ const styles = StyleSheet.create({
 | max | number | null | Max itens permitted |
 | onMaxError | func | null | Callback after user reach max itens |
 | onItemPress | func | null | Callback after user press on item |
-| itemStyle | any | null | Style of item container |
-| itemStyleSelected | any | null | Style of item container selected |
-| itemLabelText | any | null | Style of item label |
-| itemLabelTextSelected | any | null | Style of item label selected |
+| itemStyle | any | {} | Style of item container |
+| itemStyleSelected | any | {} | Style of item container selected |
+| itemLabelStyle | any | {} | Style of item label |
+| itemLabelStyleSelected | any | {} | Style of item label selected |
 
