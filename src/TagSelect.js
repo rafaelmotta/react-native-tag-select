@@ -49,20 +49,18 @@ class TagSelect extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.list}>
-          {this.props.data.map((i) => {
-            return(
-              <TagSelectItem
-                {...this.props}
-                label={i[this.props.labelAttr]}
-                key={i[this.props.keyAttr]}
-                onPress={this.handleSelectItem.bind(this, i)}
-                selected={this.state.selectedItems[i[this.props.keyAttr]] && true}
-              />
-              )
-          })}
-        </View>
+      <View style={styles.list}>
+        {this.props.data.map((i) => {
+          return(
+            <TagSelectItem
+              {...this.props}
+              label={i[this.props.labelAttr]}
+              key={i[this.props.keyAttr]}
+              onPress={this.handleSelectItem.bind(this, i)}
+              selected={this.state.selectedItems[i[this.props.keyAttr]] && true}
+            />
+            )
+        })}
       </View>
     );
   }
@@ -75,8 +73,8 @@ TagSelect.propTypes = {
   max: PropTypes.number,
   onMaxError: PropTypes.func,
   onItemPress: PropTypes.func,
-  itemInnerStyle: PropTypes.any,
-  itemInnerStyleSelected: PropTypes.any,
+  itemStyle: PropTypes.any,
+  itemStyleSelected: PropTypes.any,
   itemLabelText: PropTypes.any,
   itemLabelTextSelected: PropTypes.any,
 };
@@ -88,16 +86,13 @@ TagSelect.defaultProps = {
   max: null,
   onMaxError: null,
   onItemPress: null,
-  itemInnerStyle: {},
-  itemInnerStyleSelected: {},
+  itemStyle: {},
+  itemStyleSelected: {},
   itemLabelText: {},
   itemLabelTextSelected: {},
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   list: {
     flexDirection: 'row',
     flexWrap: 'wrap',

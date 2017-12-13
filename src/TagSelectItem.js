@@ -9,8 +9,8 @@ import {
 
 const TagSelectItem = (props) => {
   const innerStyle = [
-    ([styles.inner].concat(props.itemInnerStyle)),
-    props.selected && ([styles.innerSelected].concat(props.itemInnerStyleSelected))
+    ([styles.inner].concat(props.itemStyle)),
+    props.selected && ([styles.innerSelected].concat(props.itemStyleSelected))
   ];
 
   const labelStyle = [
@@ -36,8 +36,8 @@ TagSelectItem.propTypes = {
   onPress: PropTypes.func,
   selected: PropTypes.bool,
   activeOpacity: PropTypes.number,
-  itemInnerStyle: PropTypes.any,
-  itemInnerStyleSelected: PropTypes.any,
+  itemStyle: PropTypes.any,
+  itemStyleSelected: PropTypes.any,
   itemLabelText: PropTypes.any,
   itemLabelTextSelected: PropTypes.any,
 };
@@ -47,8 +47,8 @@ TagSelectItem.defaultProps = {
   onPress: null,
   selected: false,
   activeOpacity: 0.5,
-  itemInnerStyle: null,
-  itemInnerStyleSelected: null,
+  itemStyle: null,
+  itemStyleSelected: null,
   itemLabelText: null,
   itemLabelTextSelected: null,
 };
