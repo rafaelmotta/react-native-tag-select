@@ -75,8 +75,8 @@ TagSelect.propTypes = {
   onItemPress: PropTypes.func,
   itemStyle: PropTypes.any,
   itemStyleSelected: PropTypes.any,
-  itemLabelText: PropTypes.any,
-  itemLabelTextSelected: PropTypes.any,
+  itemLabelStyle: PropTypes.any,
+  itemLabelStyleSelected: PropTypes.any,
 };
 
 TagSelect.defaultProps = {
@@ -88,8 +88,8 @@ TagSelect.defaultProps = {
   onItemPress: null,
   itemStyle: {},
   itemStyleSelected: {},
-  itemLabelText: {},
-  itemLabelTextSelected: {},
+  itemLabelStyle: {},
+  itemLabelStyleSelected: {},
 };
 
 const styles = StyleSheet.create({

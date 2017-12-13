@@ -14,8 +14,8 @@ const TagSelectItem = (props) => {
   ];
 
   const labelStyle = [
-    ([styles.labelText].concat(props.itemLabelText)),
-    props.selected && ([styles.labelTextSelected].concat(props.itemLabelTextSelected))
+    ([styles.labelText].concat(props.itemLabelStyle)),
+    props.selected && ([styles.labelTextSelected].concat(props.itemLabelStyleSelected))
   ];
 
   return (
@@ -38,8 +38,8 @@ TagSelectItem.propTypes = {
   activeOpacity: PropTypes.number,
   itemStyle: PropTypes.any,
   itemStyleSelected: PropTypes.any,
-  itemLabelText: PropTypes.any,
-  itemLabelTextSelected: PropTypes.any,
+  itemLabelStyle: PropTypes.any,
+  itemLabelStyleSelected: PropTypes.any,
 };
 
 TagSelectItem.defaultProps = {
@@ -49,8 +49,8 @@ TagSelectItem.defaultProps = {
   activeOpacity: 0.5,
   itemStyle: null,
   itemStyleSelected: null,
-  itemLabelText: null,
-  itemLabelTextSelected: null,
+  itemLabelStyle: null,
+  itemLabelStyleSelected: null,
 };
 
 export const styles = StyleSheet.create({
