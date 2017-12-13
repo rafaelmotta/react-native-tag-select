@@ -80,6 +80,14 @@ export default class App extends React.Component {
             />
           </View>
         </View>
+        <Text style={styles.labelText}>With custom style:</Text>
+        <TagSelect
+          data={data}
+          itemStyle={styles.item}
+          itemLabelStyle={styles.label}
+          itemStyleSelected={styles.itemSelected}
+          itemLabelStyleSelected={styles.labelSelected}
+        />
       </View>
     );
   }
@@ -103,7 +111,21 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '500',
     marginBottom: 15,
-  }
+  },
+  item: {
+    borderWidth: 1,
+    borderColor: '#333',    
+    backgroundColor: '#FFF',
+  },
+  label: {
+    color: '#333'
+  },
+  itemSelected: {
+    backgroundColor: '#333',
+  },
+  labelSelected: {
+    color: '#FFF',
+  },
 });
 ```
 
