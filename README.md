@@ -12,6 +12,10 @@ A simple tag component to act as radio button / checkbox
 
 ## Demo
 
+You can try on expo: https://expo.io/@rafaelmotta021/react-native-tag-select-demo
+
+or just check the image bellow:
+
 <p align="center">
 <img src="https://raw.githubusercontent.com/rafaelmotta/react-native-tag-select/master/example.gif" height="550" />
 </p>
