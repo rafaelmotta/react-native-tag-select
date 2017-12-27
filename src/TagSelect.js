@@ -67,12 +67,11 @@ class TagSelect extends React.Component {
       value[item[this.props.keyAttr]] = item;
     }
 
-    // Callback after item press
-    if (this.props.onItemPress) {
-      this.props.onItemPress(item);
-    }
-
-    return this.setState({ value });
+    return this.setState({ value }, () => {
+      if (this.props.onItemPress) {
+        this.props.onItemPress(item);
+      }
+    });
   };
 
   render() {
