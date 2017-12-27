@@ -9,57 +9,85 @@ import TagSelectItem from './TagSelectItem';
 
 class TagSelect extends React.Component {
   state = {
-    selectedItems: {},
+    value: {},
   };
 
-  get totalSelected() {
-    return Object.keys(this.state.selectedItems).length;
+  componentWillMount() {
+    if (this.props.value.length > 0) {
+      // Pre-render values selected by default
+      const value = {};
+      this.props.value.forEach((v) => {
+        value[v[[this.props.keyAttr]]] = v;
+      });
+
+      this.setState({ value });
+    }
   }
 
+  /**
+   * @description return total of itens selected
+   * @return {Number}
+   */
+  get totalSelected() {
+    return Object.keys(this.state.value).length;
+  }
+
+  /**
+   * @description return itens selected
+   * @return {Array}
+   */
   get itemsSelected() {
     const items = [];
 
-    Object.entries(this.state.selectedItems).forEach(([key]) => {
-      items.push(this.state.selectedItems[key]);
+    Object.entries(this.state.value).forEach(([key]) => {
+      items.push(this.state.value[key]);
     });
 
     return items;
   }
 
+  /**
+   * @description callback after select an item
+   * @param {Object} item
+   * @return {Void}
+   */
   handleSelectItem = (item) => {
-    const selectedItems = Object.assign(this.state.selectedItems, {});
-    const found = this.state.selectedItems[item[this.props.keyAttr]];
+    const value = { ...this.state.value };
+    const found = this.state.value[item[this.props.keyAttr]];
 
+    // Item is on array, so user is removing the selection
     if (found) {
-      delete selectedItems[item[this.props.keyAttr]];
+      delete value[item[this.props.keyAttr]];
     } else {
+      // User is adding but has reached the max number permitted
       if (this.props.max && this.totalSelected >= this.props.max) {
         return this.props.onMaxError();
       }
 
-      selectedItems[item[this.props.keyAttr]] = item;
+      value[item[this.props.keyAttr]] = item;
     }
 
-    this.setState({ selectedItems });
-    
+    // Callback after item press
     if (this.props.onItemPress) {
-      return this.props.onItemPress(item);
+      this.props.onItemPress(item);
     }
+
+    return this.setState({ value });
   };
 
   render() {
     return (
       <View style={styles.list}>
         {this.props.data.map((i) => {
-          return(
+          return (
             <TagSelectItem
               {...this.props}
               label={i[this.props.labelAttr]}
               key={i[this.props.keyAttr]}
               onPress={this.handleSelectItem.bind(this, i)}
-              selected={this.state.selectedItems[i[this.props.keyAttr]] && true}
+              selected={this.state.value[i[this.props.keyAttr]] && true}
             />
-            )
+          );
         })}
       </View>
     );
@@ -67,6 +95,7 @@ class TagSelect extends React.Component {
 }
 
 TagSelect.propTypes = {
+  value: PropTypes.array,
   labelAttr: PropTypes.string,
   keyAttr: PropTypes.string,
   data: PropTypes.array,
@@ -80,6 +109,7 @@ TagSelect.propTypes = {
 };
 
 TagSelect.defaultProps = {
+  value: [],
   labelAttr: 'label',
   keyAttr: 'id',
   data: [],
