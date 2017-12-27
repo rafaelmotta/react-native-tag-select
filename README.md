@@ -137,6 +137,7 @@ const styles = StyleSheet.create({
 
 | Name | Type| Default | Description |
 | --- | --- | --- | --- |
+| value | array | [] | Array with pre-defined values |
 | labelAttr | string | 'label' | Key attribute name to render label text |
 | keyAttr | string | 'id' | Key attribute name to render key property to the list  |
 | data | array | [] | Data to render |
@@ -148,3 +149,17 @@ const styles = StyleSheet.create({
 | itemLabelStyle | any | {} | Style of item label |
 | itemLabelStyleSelected | any | {} | Style of item label selected |
 
+# Methods
+To access tag select methods you must get the ref property first.
+
+
+- Get the number of itens selected. Returns a boolean.
+```javascript
+this.ref.totalSelected
+```
+ 
+
+- Get itens selected. Returns an array.
+```javascript
+this.ref.itemsSelected
+```
