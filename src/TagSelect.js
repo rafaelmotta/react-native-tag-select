@@ -8,12 +8,40 @@ import {
 import TagSelectItem from './TagSelectItem';
 
 class TagSelect extends React.Component {
+  static propTypes = {
+    value: PropTypes.array,
+    labelAttr: PropTypes.string,
+    keyAttr: PropTypes.string,
+    data: PropTypes.array,
+    max: PropTypes.number,
+    onMaxError: PropTypes.func,
+    onItemPress: PropTypes.func,
+    itemStyle: PropTypes.any,
+    itemStyleSelected: PropTypes.any,
+    itemLabelStyle: PropTypes.any,
+    itemLabelStyleSelected: PropTypes.any,
+  };
+
+  static defaultProps = {
+    value: [],
+    labelAttr: 'label',
+    keyAttr: 'id',
+    data: [],
+    max: null,
+    onMaxError: null,
+    onItemPress: null,
+    itemStyle: {},
+    itemStyleSelected: {},
+    itemLabelStyle: {},
+    itemLabelStyleSelected: {},
+  };
+
   state = {
     value: {},
   };
 
   componentWillMount() {
-    if (this.props.value.length > 0) {
+    if (this.props.value && this.props.value.length > 0) {
       // Pre-render values selected by default
       const value = {};
       this.props.value.forEach((v) => {
@@ -92,34 +120,6 @@ class TagSelect extends React.Component {
     );
   }
 }
-
-TagSelect.propTypes = {
-  value: PropTypes.array,
-  labelAttr: PropTypes.string,
-  keyAttr: PropTypes.string,
-  data: PropTypes.array,
-  max: PropTypes.number,
-  onMaxError: PropTypes.func,
-  onItemPress: PropTypes.func,
-  itemStyle: PropTypes.any,
-  itemStyleSelected: PropTypes.any,
-  itemLabelStyle: PropTypes.any,
-  itemLabelStyleSelected: PropTypes.any,
-};
-
-TagSelect.defaultProps = {
-  value: [],
-  labelAttr: 'label',
-  keyAttr: 'id',
-  data: [],
-  max: null,
-  onMaxError: null,
-  onItemPress: null,
-  itemStyle: {},
-  itemStyleSelected: {},
-  itemLabelStyle: {},
-  itemLabelStyleSelected: {},
-};
 
 const styles = StyleSheet.create({
   list: {
