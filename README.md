@@ -18,7 +18,7 @@ You can try on expo: https://exp.host/@rafaelmotta021/react-native-tag-select-de
 or just check the image bellow:
 
 <p align="center">
-<video src="http://i.imgur.com/xcTLDQe.gifv" height="550" />
+<img src="https://s3.amazonaws.com/rafaelmotta021/react-native-demo.gif" height="550" />
 </p>
 
 ## Setup
