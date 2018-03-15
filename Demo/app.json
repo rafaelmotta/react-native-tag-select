@@ -1,0 +1,8 @@
+{
+  "expo": {
+    "name": "React Native Tag Select Demo",
+    "slug": "react-native-tag-select-demo",
+    "sdkVersion": "25.0.0",
+    "privacy": "public"
+  }
+}

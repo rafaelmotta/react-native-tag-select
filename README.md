@@ -6,13 +6,14 @@ A simple tag component to act as radio button / checkbox
 
 ## Features
 
-- Max itens selected
+- Suports Array of objects or array of strings
+- Support max itens selected
+- Built in themes
 - Plain simple and flexible API
-- Listeners for actions
 
 ## Demo
 
-You can try on expo: https://expo.io/@rafaelmotta021/react-native-tag-select-demo
+You can try on expo: https://exp.host/@rafaelmotta021/react-native-tag-select-demo
 
 or just check the image bellow:
 
@@ -133,17 +134,29 @@ const styles = StyleSheet.create({
 });
 ```
 
+## Demo
+You can customized the look and feel of this library the way you want, but, if you prefer, we ship 6 themes for you:
+
+- ```default```
+- ```inverse```
+- ```success```
+- ```info```
+- ```danger```
+- ```warning```
+
 ## Available props
 
 | Name | Type| Default | Description |
 | --- | --- | --- | --- |
 | value | array | [] | Array with pre-defined values |
-| labelAttr | string | 'label' | Key attribute name to render label text |
-| keyAttr | string | 'id' | Key attribute name to render key property to the list  |
 | data | array | [] | Data to render |
+| labelAttr | string | 'label' | Key attribute name to render label text, if the data props is an array of objects |
+| keyAttr | string | 'id' | Key attribute name to render key property to the list, if the data props is an array of objects  |
 | max | number | null | Max itens permitted |
 | onMaxError | func | null | Callback after user reach max itens |
 | onItemPress | func | null | Callback after user press on item |
+| theme | string | 'default' | Default theme inspired on bootstrap colors. You can check the options available above |
+| containerStyle | any | {} | Style of the list container |
 | itemStyle | any | {} | Style of item container |
 | itemStyleSelected | any | {} | Style of item container selected |
 | itemLabelStyle | any | {} | Style of item label |
