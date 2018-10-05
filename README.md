@@ -166,13 +166,13 @@ You can customized the look and feel of this library the way you want, but, if y
 To access tag select methods you must get the ref property first.
 
 
-- Get the number of itens selected. Returns a boolean.
+- Get the number of items selected. Returns a boolean.
 ```javascript
 this.ref.totalSelected
 ```
  
 
-- Get itens selected. Returns an array.
+- Get items selected. Returns an array.
 ```javascript
 this.ref.itemsSelected
 ```
