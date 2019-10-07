@@ -58,6 +58,16 @@ class TagSelect extends React.Component {
     })
 
     this.setState({ value })
+  } 
+
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      const value = {}
+      this.props.value.forEach((val) => {
+        value[val[[this.props.keyAttr]] || val] = val
+      })
+      this.setState({ value })
+    }
   }
 
   /**
@@ -92,7 +102,6 @@ class TagSelect extends React.Component {
 
     const value = { ...this.state.value }
     const found = this.state.value[key]
-
     // Item is on array, so user is removing the selection
     if (found) {
       delete value[key]
@@ -106,7 +115,7 @@ class TagSelect extends React.Component {
 
       value[key] = item
     }
-
+    
     return this.setState({ value }, () => {
       if (this.props.onItemPress) {
         this.props.onItemPress(item)
