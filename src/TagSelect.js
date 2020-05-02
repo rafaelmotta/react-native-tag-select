@@ -123,9 +123,10 @@ class TagSelect extends React.Component {
         ]}
       >
         {this.props.data.map((i) => {
+          const props = {...this.props, ...i}
           return (
             <TagSelectItem
-              {...this.props}
+              {...props}
               label={i[this.props.labelAttr] ? i[this.props.labelAttr] : i}
               key={i[this.props.keyAttr] ? i[this.props.keyAttr] : i}
               onPress={this.handleSelectItem.bind(this, i)}
